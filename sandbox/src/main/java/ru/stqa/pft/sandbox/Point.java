@@ -1,8 +1,5 @@
 package ru.stqa.pft.sandbox;
 
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
-
 /**
  * Created by Olga_Verkhovtseva on 5/15/2017.
  */
