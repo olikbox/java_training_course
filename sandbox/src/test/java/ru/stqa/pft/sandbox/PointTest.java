@@ -23,7 +23,7 @@ public class PointTest {
         Assert.assertEquals(d, 5.0);
     }
 
-    @Test
+    @Test //негативный тест
     public void NegativeDistanceTest () {
         Point p1 = new Point(9, 7);
         Point p2 = new Point(5, 4);
