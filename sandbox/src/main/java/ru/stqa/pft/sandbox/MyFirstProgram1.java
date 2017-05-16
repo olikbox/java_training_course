@@ -4,10 +4,10 @@ public class MyFirstProgram1 {
     public static void main(String[] args) {
         System.out.println("Hello!");
 
-        Point p1 = new Point(2, 3);
-        Point p2 = new Point(4, 5);
+        Point p1 = new Point(1, 1);
+        Point p2 = new Point(2, 2);
 
-        System.out.println("Расстояние между двумя точками равняется " +p2.distance(p1));
+        System.out.println("Расстояние между двумя точками равняется " +p1.distance(p2));
     }
 
 //Moved to Point.java
