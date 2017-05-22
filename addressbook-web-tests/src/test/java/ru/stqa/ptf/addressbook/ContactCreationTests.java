@@ -43,8 +43,12 @@ public class ContactCreationTests {
 
         initAddContact();
         fillContactForm();
-        wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
+        submitContactCretiopn();
         returntoHomePage();
+    }
+
+    private void submitContactCretiopn() {
+        wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
     }
 
     private void initAddContact() {
