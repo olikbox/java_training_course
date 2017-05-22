@@ -38,11 +38,11 @@ public class ContactCreationTests {
 
         initAddContact();
         fillContactForm(new ContactData("Olga", "Pug", "HUG ME", "Address 1", "0987655678", "totop@mail.com", "Address 2", "No notes"));
-        submitContactCretiopn();
+        submitContactCreation();
         returntoHomePage();
     }
 
-    private void submitContactCretiopn() {
+    private void submitContactCreation() {
         wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
     }
 
