@@ -1,9 +1,11 @@
-package ru.stqa.ptf.addressbook;
+package ru.stqa.ptf.addressbook.appmanger;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import ru.stqa.ptf.addressbook.model.ContactData;
+import ru.stqa.ptf.addressbook.model.GroupData;
 
 import java.util.concurrent.TimeUnit;
 
@@ -22,7 +24,7 @@ public class ApplicationManger {
         }
     }
 
-    protected void init() {
+    public void init() {
         wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         wd.get("http://localhost/addressbook/group.php");
@@ -41,15 +43,15 @@ public class ApplicationManger {
         wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
     }
 
-    protected void returntoGroupPage() {
+    public void returntoGroupPage() {
         wd.findElement(By.linkText("group page")).click();
     }
 
-    protected void submitGroupCretiopn() {
+    public void submitGroupCretiopn() {
         wd.findElement(By.name("submit")).click();
     }
 
-    protected void fillGroupForm(GroupData groupData) {
+    public void fillGroupForm(GroupData groupData) {
         wd.findElement(By.name("group_name")).click();
         wd.findElement(By.name("group_name")).clear();
         wd.findElement(By.name("group_name")).sendKeys(groupData.getName());
@@ -61,31 +63,31 @@ public class ApplicationManger {
         wd.findElement(By.name("group_footer")).sendKeys(groupData.getFooter());
     }
 
-    protected void initGroupCreation() {
+    public void initGroupCreation() {
         wd.findElement(By.name("new")).click();
     }
 
-    protected void gotoGroupPage() {
+    public void gotoGroupPage() {
         wd.findElement(By.linkText("groups")).click();
     }
 
-    protected void stop() {
+    public void stop() {
         wd.quit();
     }
 
-    protected void submitContactCreation() {
+    public void submitContactCreation() {
         wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
     }
 
-    protected void initAddContact() {
+    public void initAddContact() {
         wd.findElement(By.linkText("add new")).click();
     }
 
-    protected void returntoHomePage() {
+    public void returntoHomePage() {
         wd.findElement(By.linkText("home page")).click();
     }
 
-    protected void fillContactForm(ContactData contactData) {
+    public void fillContactForm(ContactData contactData) {
         wd.findElement(By.name("firstname")).click();
         wd.findElement(By.name("firstname")).clear();
         wd.findElement(By.name("firstname")).sendKeys(contactData.getFirstname());
