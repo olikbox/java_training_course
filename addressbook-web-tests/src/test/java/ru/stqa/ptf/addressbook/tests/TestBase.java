@@ -9,7 +9,7 @@ import ru.stqa.ptf.addressbook.appmanger.ApplicationManger;
  */
 public class TestBase {
 
-    protected final ApplicationManger app = new ApplicationManger();
+    public ApplicationManger app = new ApplicationManger();
 
     @BeforeMethod
     public void setUp() throws Exception {
