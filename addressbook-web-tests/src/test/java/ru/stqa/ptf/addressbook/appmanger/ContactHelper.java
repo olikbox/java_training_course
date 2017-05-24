@@ -37,7 +37,7 @@ public class ContactHelper extends BaseHelper {
     }
 
     public void initContactModification() {
-        click(By.xpath("//*[@id=\"maintable\"]/tbody/tr[3]/td[8]/a/img"));
+        click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
     }
 
     public void submitContactModification() {

@@ -12,11 +12,13 @@ public class TestBase {
     public ApplicationManger app = new ApplicationManger();
 
     @BeforeMethod
+
     public void setUp() throws Exception {
         app.init();
     }
 
     @AfterMethod
+
     public void tearDown() {
         app.stop();
     }

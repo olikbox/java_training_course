@@ -9,6 +9,7 @@ import ru.stqa.ptf.addressbook.model.ContactData;
 public class ContactModificationTests extends TestBase {
 
     @Test
+
     public void contactModificationTests() {
 
         app.getNavigationHelper().gotoHomePage();

@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
  * Created by Olga_Verkhovtseva on 5/24/2017.
  */
 public class ContactDeletionTests extends TestBase {
+
     @Test
     public void contactDeletionTests() {
 
