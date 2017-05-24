@@ -32,4 +32,22 @@ public class ContactHelper extends BaseHelper {
     public void submitContactCreation() {
         click(By.xpath("//div[@id='content']/form/input[21]"));
     }
+
+    public void SelectContactModification() {
+
+        click(By.name("selected[]"));
+    }
+
+    public void InitContactModification() {
+
+        click(By.xpath("//*[@id=\"maintable\"]/tbody/tr[3]/td[8]/a/img"));
+
+    }
+
+    public void submitContactModification() {
+
+        click(By.name("update"));
+
+    }
 }
+
