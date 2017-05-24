@@ -15,7 +15,7 @@ public class ContactHelper extends BaseHelper {
     }
 
     public void initAddContact() {
-        wd.findElement(By.linkText("add new")).click();
+        click(By.linkText("add new"));
     }
 
     public void fillContactForm(ContactData contactData) {
