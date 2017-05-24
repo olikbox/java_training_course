@@ -27,7 +27,11 @@ public class GroupHelper extends BaseHelper {
         click(By.name("submit"));
     }
 
-    public void IntitGroupModification() {
+    public void selectGroupModification() {
+        click(By.name("selected[]"));
+    }
+
+    public void intitGroupModification() {
         click(By.name("edit"));
     }
 
@@ -39,7 +43,5 @@ public class GroupHelper extends BaseHelper {
         click(By.name("delete"));
     }
 
-    public void SelectGroupModification() {
-        click(By.name("selected[]"));
-    }
+
 }

@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class NavigationHelper extends BaseHelper {
 
-       public NavigationHelper(FirefoxDriver wd) {
+    public NavigationHelper(FirefoxDriver wd) {
         super(wd);
     }
 
@@ -23,5 +23,9 @@ public class NavigationHelper extends BaseHelper {
 
     public void gotoHomePage() {
         click(By.linkText("home"));
+    }
+
+    public void returntoHomePage() {
+        click(By.linkText("home page"));
     }
 }

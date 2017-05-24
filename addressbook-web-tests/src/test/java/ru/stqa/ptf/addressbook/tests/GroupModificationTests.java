@@ -10,8 +10,8 @@ public class GroupModificationTests extends TestBase {
     @Test
     public void testGroupModification() {
         app.getNavigationHelper().gotoGroupPage();
-        app.getGroupHelper().SelectGroupModification();
-        app.getGroupHelper().IntitGroupModification();
+        app.getGroupHelper().selectGroupModification();
+        app.getGroupHelper().intitGroupModification();
         app.getGroupHelper().fillGroupForm(new GroupData("Nova Liga2", "NovaLiga corporation", "NovaLiga inc. "));
         app.getGroupHelper().submitGroupModification();
         app.getNavigationHelper().returntoGroupPage();
