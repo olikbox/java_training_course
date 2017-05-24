@@ -27,4 +27,11 @@ public class GroupHelper extends BaseHelper {
         click(By.name("submit"));
     }
 
+    public void IntitGroupModification() {
+        click(By.name("edit"));
+    }
+
+    public void submitGroupModification() {
+        click(By.name("update"));
+    }
 }
