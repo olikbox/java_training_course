@@ -1,5 +1,6 @@
 package ru.stqa.ptf.addressbook.tests;
 
+import org.openqa.selenium.remote.BrowserType;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import ru.stqa.ptf.addressbook.appmanger.ApplicationManger;
@@ -9,7 +10,7 @@ import ru.stqa.ptf.addressbook.appmanger.ApplicationManger;
  */
 public class TestBase {
 
-    public ApplicationManger app = new ApplicationManger();
+    public ApplicationManger app = new ApplicationManger(BrowserType.IE);
 
     @BeforeMethod
 

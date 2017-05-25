@@ -1,6 +1,7 @@
 package ru.stqa.ptf.addressbook.appmanger;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.ptf.addressbook.model.ContactData;
 
@@ -9,12 +10,12 @@ import ru.stqa.ptf.addressbook.model.ContactData;
  */
 public class ContactHelper extends BaseHelper {
 
-    public ContactHelper(FirefoxDriver wd) {
+    public ContactHelper(WebDriver wd) {
         super(wd);
     }
 
     public void initAddContact() {
-        click(By.linkText("add new"));
+        click(By.xpath("//*[@id=\"nav\"]/ul/li[2]/a"));
     }
 
     public void fillContactForm(ContactData contactData) {

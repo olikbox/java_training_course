@@ -1,16 +1,16 @@
 package ru.stqa.ptf.addressbook.appmanger;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebDriver;
 
 /**
  * Created by Olga_Verkhovtseva on 5/24/2017.
  */
 public class BaseHelper {
 
-    public FirefoxDriver wd;
+    public WebDriver wd;
 
-    public BaseHelper(FirefoxDriver wd) {
+    public BaseHelper(WebDriver wd) {
         this.wd = wd;
     }
 
