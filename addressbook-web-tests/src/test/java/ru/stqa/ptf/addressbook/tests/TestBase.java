@@ -10,7 +10,7 @@ import ru.stqa.ptf.addressbook.appmanger.ApplicationManger;
  */
 public class TestBase {
 
-    public ApplicationManger app = new ApplicationManger(BrowserType.IE);
+    public ApplicationManger app = new ApplicationManger(BrowserType.CHROME);
 
     @BeforeMethod
 

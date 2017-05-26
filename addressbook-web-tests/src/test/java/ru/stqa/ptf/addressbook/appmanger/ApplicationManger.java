@@ -9,6 +9,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -21,7 +22,6 @@ public class ApplicationManger {
     private GroupHelper groupHelper;
     private ContactHelper contactHelper;
     private NavigationHelper navigationHelper;
-    private SessionHelper sessionHelper;
     private String browser;
 
     public ApplicationManger() {
@@ -41,11 +41,11 @@ public class ApplicationManger {
     }
 
     public void init() {
-        if (browser == BrowserType.FIREFOX) {
+        if (Objects.equals(browser, BrowserType.FIREFOX)) {
             wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
-        } else if (browser == BrowserType.CHROME) {
+        } else if (Objects.equals(browser, BrowserType.CHROME)) {
             wd = new ChromeDriver();
-        } else if (browser == BrowserType.IE) {
+        } else if (Objects.equals(browser, BrowserType.IE)) {
             DesiredCapabilities ieCapabilities = DesiredCapabilities.internetExplorer();
             ieCapabilities.setCapability(
                     InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
@@ -59,7 +59,7 @@ public class ApplicationManger {
         contactHelper = new ContactHelper(wd);
         groupHelper = new GroupHelper(wd);
         navigationHelper = new NavigationHelper(wd);
-        sessionHelper = new SessionHelper(wd);
+        SessionHelper sessionHelper = new SessionHelper(wd);
         sessionHelper.login("admin", "secret");
     }
 
