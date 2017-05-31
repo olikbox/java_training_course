@@ -12,10 +12,15 @@ public class GroupModificationTests extends TestBase {
 
     public void testGroupModification() {
         app.getNavigationHelper().gotoGroupPage();
-        app.getGroupHelper().selectGroupModification();
-        app.getGroupHelper().intitGroupModification();
-        app.getGroupHelper().fillGroupForm(new GroupData("Musa Mus", "NovaLiga corporation", "NovaLiga inc. "));
-        app.getGroupHelper().submitGroupModification();
-        app.getNavigationHelper().returntoGroupPage();
+        app.getNavigationHelper().gotoGroupPage();
+        if (!app.getGroupHelper().IsThereAGroup()) {
+            app.getGroupHelper().createGroup(new GroupData("Pugy Pug", "NovaLiga corporation", "NovaLiga inc. "));
+        }
+            //app.getGroupHelper().getExistingGroup();
+        app.getGroupHelper().modifyGroup(new GroupData("Musa Mus", "NovaLiga corporation", "NovaLiga inc. "));
+
+
+        // String existingText = wd.findElement(locator).getAttribute("value");
+
     }
 }

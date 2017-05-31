@@ -2,7 +2,6 @@ package ru.stqa.ptf.addressbook.appmanger;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.ptf.addressbook.model.GroupData;
 
 /**
@@ -44,5 +43,37 @@ public class GroupHelper extends BaseHelper {
         click(By.name("delete"));
     }
 
+    public void returntoGroupPage() {
+        click(By.linkText("group page"));
+    }
 
+    public void createGroup(GroupData group) {
+
+        initGroupCreation();
+        fillGroupForm(group);
+        submitGroupCreation();
+        returntoGroupPage();
+
+    }
+
+    public boolean IsThereAGroup() {
+        return isElementPresent(By.name("selected[]"));
+    }
+
+    private boolean isElementPresent(By b) {
+              return b != null;
+    }
+
+    public void modifyGroup(GroupData group) {
+        selectGroupModification();
+        intitGroupModification();
+        fillGroupForm(group);
+        submitGroupModification();
+        returntoGroupPage();
+    }
+
+    public void getExistingGroup() {
+        By test = By.name("selected[]");
+
+    }
 }
