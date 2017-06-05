@@ -60,10 +60,6 @@ public class GroupHelper extends BaseHelper {
         return isElementPresent(By.name("selected[]"));
     }
 
-    private boolean isElementPresent(By b) {
-              return b != null;
-    }
-
     public void modifyGroup(GroupData group) {
         selectGroupModification();
         intitGroupModification();
@@ -72,8 +68,4 @@ public class GroupHelper extends BaseHelper {
         returntoGroupPage();
     }
 
-    public void getExistingGroup() {
-        By test = By.name("selected[]");
-
-    }
 }

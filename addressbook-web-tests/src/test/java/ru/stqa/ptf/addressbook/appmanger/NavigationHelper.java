@@ -2,7 +2,6 @@ package ru.stqa.ptf.addressbook.appmanger;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
  * Created by Olga_Verkhovtseva on 5/23/2017.

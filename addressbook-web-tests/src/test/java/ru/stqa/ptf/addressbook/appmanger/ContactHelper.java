@@ -2,7 +2,6 @@ package ru.stqa.ptf.addressbook.appmanger;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.ptf.addressbook.model.ContactData;
 
 /**
@@ -10,8 +9,10 @@ import ru.stqa.ptf.addressbook.model.ContactData;
  */
 public class ContactHelper extends BaseHelper {
 
+    WebDriver Driver;
     public ContactHelper(WebDriver wd) {
         super(wd);
+        Driver = wd;
     }
 
     public void initAddContact() {
@@ -47,6 +48,25 @@ public class ContactHelper extends BaseHelper {
 
     public void submitContactDelete() {
         click(By.xpath("//*[@id=\"content\"]/form[2]/input[2]"));
+    }
+
+
+    public boolean IsThereAContact() {
+        return isElementPresent(By.name("entry"));
+    }
+
+    public void createContact(ContactData contactData) {
+        gotoAddContactPage();
+        initAddContact();
+        fillContactForm(new ContactData("AAA", "Pug", "HUG ME", "Address 1", "0987655678", "totop@mail.com", "Address 2", "No notes"));
+        submitContactCreation();
+    }
+
+    public void gotoAddContactPage() {
+        {
+            click(By.linkText("add new"));
+        }
+
     }
 }
 
