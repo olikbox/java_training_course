@@ -5,6 +5,13 @@ public class GroupData {
     private final String header;
     private final String footer;
 
+    @Override
+    public String toString() {
+        return "GroupData{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+
     public GroupData(String name, String header, String footer) {
         this.name = name;
         this.header = header;
