@@ -1,9 +1,45 @@
 package ru.stqa.ptf.addressbook.model;
 
 public class GroupData {
-    private final String name;
-    private final String header;
-    private final String footer;
+    private int id;
+    private String name;
+    private String header;
+    private String footer;
+
+    public GroupData(String name, String header, String footer) {
+        this.id = 0;
+        this.name = name;
+        this.header = header;
+        this.footer = footer;
+    }
+
+    public GroupData(int id, String name, String header, String footer) {
+        this.id = id;
+        this.name = name;
+        this.header = header;
+        this.footer = footer;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getHeader() {
+        return header;
+    }
+
+    public String getFooter() {
+        return footer;
+    }
+
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -22,26 +58,6 @@ public class GroupData {
 
     @Override
     public String toString() {
-        return "GroupData{" +
-                "name='" + name + '\'' +
-                '}';
-    }
-
-    public GroupData(String name, String header, String footer) {
-        this.name = name;
-        this.header = header;
-        this.footer = footer;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getHeader() {
-        return header;
-    }
-
-    public String getFooter() {
-        return footer;
+        return "GroupData{" + "id='" + id + '\'' + ", name='" + name + '\'' + '}';
     }
 }
