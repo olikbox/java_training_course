@@ -52,15 +52,14 @@ public class ContactHelper extends BaseHelper {
         click(By.xpath("//*[@id=\"content\"]/form[2]/input[2]"));
     }
 
-
     public boolean IsThereAContact() {
         return isElementPresent(By.name("entry"));
     }
 
-    public void createContact(ContactData contactData) {
+    public void createContact(ContactData contact) {
         gotoAddContactPage();
         initAddContact();
-        fillContactForm ( new ContactData ( "AAA", "Pug", "HUG ME", "Address 1", "0987655678", "totop@mail.com" ) );
+        fillContactForm ( contact);
         submitContactCreation();
     }
 

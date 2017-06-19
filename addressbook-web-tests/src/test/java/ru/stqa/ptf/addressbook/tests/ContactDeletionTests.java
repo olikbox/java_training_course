@@ -18,11 +18,7 @@ public class ContactDeletionTests extends TestBase {
         if (!app.getContactHelper().IsThereAContact()) {
             app.getContactHelper().createContact(new ContactData( "Koska", "Pug", "HUG ME", "Address 1", "0987655678", "totop@mail.com"));
         }
-        app.getContactHelper().selectContactModification();
-        app.getContactHelper().initContactModification();
-        app.getContactHelper().submitContactDelete();
-        app.getNavigationHelper().gotoHomePage();
-        List <ContactData> before = app.getContactHelper().getContactList();
+        List <ContactData> before = app.getContactHelper ( ).getContactList ( );
         app.getContactHelper().selectContact(before.size() - 1);
         app.getContactHelper().deleteSelectedContacts();
         app.getNavigationHelper().gotoHomePage();
