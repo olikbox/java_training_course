@@ -19,7 +19,6 @@ public class ContactDeletionTests extends TestBase {
         }
     }
 
-
     @Test
     public void contactDeletionTests() {
         List <ContactData> before = app.getContactHelper ( ).getContactList ( );

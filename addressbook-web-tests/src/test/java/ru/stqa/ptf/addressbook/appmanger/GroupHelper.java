@@ -8,6 +8,8 @@ import ru.stqa.ptf.addressbook.model.GroupData;
 import java.util.ArrayList;
 import java.util.List;
 
+import static ru.stqa.ptf.addressbook.tests.TestBase.app;
+
 /**
  * Created by Olga_Verkhovtseva on 5/23/2017.
  */
@@ -87,5 +89,11 @@ public class GroupHelper extends BaseHelper {
             groups.add(group);
         }
         return groups;
+    }
+
+    public void modifyGroup(int index) {
+        selectGroupModification(index);
+      submitGroupDelete();
+        app.getNavigationHelper().returntoGroupPage();
     }
 }
