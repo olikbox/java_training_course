@@ -1,40 +1,53 @@
 package ru.stqa.ptf.addressbook.model;
 
 public class ContactData {
-    private int id;
-    private final String firstname;
-    private final String lastname;
-    private final String company;
-    private final String address;
-    private final String homephone;
-    private final String firstemail;
+    private int id = Integer.MAX_VALUE;
+    private String firstname;
+    private String lastname;
+    private String company;
+    private String address;
+    private String homephone;
+    private String firstemail;
 
-    public ContactData(String firstname, String lastname, String company, String address, String homephone, String firstemail) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.company = company;
-        this.address = address;
-        this.homephone = homephone;
-        this.firstemail = firstemail;
+    public ContactData withId(int id) {
+        this.id = id;
+        return this;
     }
 
-    public ContactData(int id, String firstname, String lastname, String company, String address, String homephone, String firstemail) {
-        this.id = id;
+    public ContactData withFirstname(String firstname) {
         this.firstname = firstname;
+        return this;
+    }
+
+    public ContactData withLastname(String lastname) {
         this.lastname = lastname;
+        return this;
+    }
+
+    public ContactData withCompany(String company) {
         this.company = company;
+        return this;
+    }
+
+    public ContactData withAddress(String address) {
         this.address = address;
+        return this;
+    }
+
+    public ContactData withHomephone(String homephone) {
         this.homephone = homephone;
+        return this;
+    }
+
+    public ContactData withFirstemail(String firstemail) {
         this.firstemail = firstemail;
+        return this;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getFirstname() {
         return firstname;
