@@ -8,12 +8,16 @@ import ru.stqa.ptf.addressbook.model.ContactData;
 import java.util.ArrayList;
 import java.util.List;
 
+import static ru.stqa.ptf.addressbook.tests.TestBase.app;
+
 /**
  * Created by Olga_Verkhovtseva on 5/23/2017.
  */
 public class ContactHelper extends BaseHelper {
 
     WebDriver Driver;
+    private NavigationHelper navigationHelper;
+
     public ContactHelper(WebDriver wd) {
         super(wd);
         Driver = wd;
@@ -36,7 +40,7 @@ public class ContactHelper extends BaseHelper {
         click(By.xpath("//div[@id='content']/form/input[21]"));
     }
 
-    public void selectContactModification() {
+    public void selectContactModification(int index) {
         click(By.name("selected[]"));
     }
 
@@ -61,6 +65,7 @@ public class ContactHelper extends BaseHelper {
         initAddContact();
         fillContactForm (contact);
         submitContactCreation();
+        app.getNavigationHelper ( ).gotoHomePage ( );
     }
 
     public void gotoAddContactPage() {
@@ -104,5 +109,22 @@ public class ContactHelper extends BaseHelper {
         type(By.name("home"), contact.getHomephone());
         type(By.name("email"), contact.getFirstemail());
     }
+
+    public void modifyContact(int index, ContactData contact) {
+        selectContactModification ( index );
+        initContactModification ( );
+        editContactForm ( contact );
+        submitContactModification ( );
+        app.getNavigationHelper ( ).returntoHomePage ( );
+    }
+
+
+    public void deleteContact(int index) {
+        selectContact ( index );
+        deleteSelectedContacts ( );
+        app.getNavigationHelper ( ).gotoHomePage ( );
+    }
+
+
 }
 
