@@ -16,7 +16,7 @@ public class GroupModificationTests extends TestBase {
     public void ensurePreconditions() {
         app.getNavigationHelper ( ).gotoGroupPage ( );
         if (!app.getGroupHelper ( ).IsThereAGroup ( )) {
-            app.getGroupHelper ( ).createGroup ( new GroupData ( "Pugy Pug", "NovaLiga corporation", "NovaLiga inc. " ) );
+            app.getGroupHelper ( ).createGroup ( new GroupData ( ).withName ( "Test2" ) );
         }
     }
 
@@ -25,7 +25,7 @@ public class GroupModificationTests extends TestBase {
     public void testGroupModification() {
         List <GroupData> before = app.getGroupHelper ( ).getGroupList ( );
         int index = before.size ( ) - 1;
-        GroupData group = new GroupData ( before.get ( index ).getId ( ), "Musa Mus", "null", "null" );
+        GroupData group = new GroupData ( ).withId ( before.get ( index ).getId ( ) ).withName ( "Musa Mus" ).withHeader ( "Header" ).withFooter ( "Footer" );
         app.getGroupHelper().modifyGroup(group);
         List <GroupData> after = app.getGroupHelper().getGroupList();
         Assert.assertEquals(after.size(), before.size());
